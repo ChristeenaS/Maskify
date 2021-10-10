@@ -27,3 +27,33 @@ def speak():
         except sr.UnknownValueError:
                 return "try again"
 
+while(1):
+    q1="tell me your name"
+    say(q1)
+    name=speak()
+    say(c)
+    txt=speak()
+    if (txt=='yes'):
+        break
+    else:
+        continue
+
+while(1):
+    q2="tell me your phone number?"
+    say(q2)
+    phno=speak()
+    say(c)
+    txt=speak()
+    if (txt=='yes'):
+        break
+    else:
+        continue
+
+y=datetime.datetime.now().strftime("%Y")
+m=datetime.datetime.now().strftime("%m")
+d=datetime.datetime.now().strftime("%d")
+file1=y+"_"+m+"_"+d+".txt"
+print(file1)
+f=open(file1,'a',encoding="utf-8")
+f.write("\n"+name+"\t"+phno)
+f.close()
